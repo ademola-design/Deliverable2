@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+  </head>
+  <body>
+    <h2 id="book">Booking Form</h2>
+    <p>Book your room now and live like royalty</p>
+    <form action="submit_booking.php" method="post">
+      <label for="name">Full Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="phone">Phone Number:</label><br />
+      <input type="number" id="phone" name="phone" required /><br /><br />
+
+      <label for="email">Email Address:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="checkin">Check-in Date:</label><br />
+      <input type="date" id="checkin" name="checkin" required /><br /><br />
+
+      <label for="checkout">Check-out Date:</label><br />
+      <input type="date" id="checkout" name="checkout" required /><br /><br />
+
+      <label for="room">Select Room:</label><br />
+      <select id="room" name="room" required>
+        <option value="101">Room 101 - $200 per night</option>
+        <option value="102">Room 102 - $150 per night</option>
+        <option value="103">Room 103 - $300 per night</option>
+        <option value="104">Room 104 - $400 per night</option></select
+      ><br /><br />
+
+      <label for="guests">Number of Guests:</label><br />
+      <input
+        type="number"
+        id="guests"
+        name="guests"
+        min="1"
+        required
+      /><br /><br />
+
+      <label for="payment">Payment Method:</label><br />
+      <select id="payment" name="payment">
+        <option value="credit">Credit Card</option>
+        <option value="debit">Debit Card</option>
+        <option value="bank">Bank Transfer</option>
+        <option value="cash">Cash on Arrival</option></select
+      ><br /><br />
+
+      <label for="requests">Special Requests:</label><br />
+      <textarea id="requests" name="requests" rows="3"></textarea><br /><br />
+
+      <button type="submit">Book Now</button>
+
+      <hr />
+    </form>
+
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert("Thank you! Your booking has been received.");
+          // Optionally reset the form:
+          // event.target.reset();
+        });
+    </script>
+  </body>
+</html>
